@@ -46,7 +46,7 @@
 
 / {
 	model = "Prime-M";
-	compatible = "prime-m,prime-m6", "licheepi,licheepi-zero",
+	compatible = "prime,prime-m3", "prime,prime-m",
 		     "allwinner,sun8i-v3s";
 
 	aliases {

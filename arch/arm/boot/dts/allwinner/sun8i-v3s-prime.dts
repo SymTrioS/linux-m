@@ -45,8 +45,8 @@
 #include "sunxi-common-regulators.dtsi"
 
 / {
-	model = "Prime-M";
-	compatible = "prime-m,prime-m6", "allwinner,sun8i-v3s";
+	model = "Prime";
+	compatible = "prime,prime-m", "allwinner,sun8i-v3s";
 
 	aliases {
 		serial0 = &uart0;
