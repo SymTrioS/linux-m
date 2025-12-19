@@ -41,7 +41,7 @@
  */
 
 /dts-v1/;
-#include "sun8i-v3s.dtsi"
+#include "sun8i-v3s-m.dtsi"
 #include "sunxi-common-regulators.dtsi"
 
 / {
