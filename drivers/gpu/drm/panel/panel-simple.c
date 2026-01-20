@@ -3857,6 +3857,36 @@ static const struct panel_desc symtrios_dpi_1024x768x30 = {
 	.connector_type = DRM_MODE_CONNECTOR_DPI,
 };
 
+static const struct display_timing symtrios_dpi_1280x720x30_timing = {
+	.pixelclock = { 31500000, 31500000, 31500000 },
+	.hactive = { 1280, 1280, 1280 },
+	.hfront_porch = { 48, 48, 48 },
+	.hback_porch = { 80, 80, 80 },
+	.hsync_len = { 32, 32, 32},
+	.vactive = { 720, 720, 720 },
+	.vfront_porch = { 3, 3, 3 },
+	.vback_porch = { 6, 6, 6 },
+	.vsync_len = { 5, 5, 5 },
+    .flags = DISPLAY_FLAGS_HSYNC_LOW | DISPLAY_FLAGS_VSYNC_LOW |
+		DISPLAY_FLAGS_DE_HIGH | DISPLAY_FLAGS_PIXDATA_POSEDGE |
+		DISPLAY_FLAGS_SYNC_POSEDGE,
+};
+
+static const struct panel_desc symtrios_dpi_1280x720x30 = {
+	.timings = &symtrios_dpi_1280x720x30_timing,
+	.num_timings = 1,
+	.bpc = 6,
+	.size = {
+		.width = 240,
+		.height = 135,
+	},
+	.bus_format = MEDIA_BUS_FMT_RGB666_1X18,
+	.bus_flags = DRM_BUS_FLAG_DE_HIGH |
+		DRM_BUS_FLAG_PIXDATA_SAMPLE_NEGEDGE |
+		DRM_BUS_FLAG_SYNC_SAMPLE_NEGEDGE,
+	.connector_type = DRM_MODE_CONNECTOR_DPI,
+};
+
 static const struct display_timing tsd_tst043015cmhx_timing = {
 	.pixelclock = { 5000000, 9000000, 12000000 },
 	.hactive = { 480, 480, 480 },
@@ -4620,6 +4650,9 @@ static const struct of_device_id platform_of_match[] = {
 	}, {
 		.compatible = "symtrios,dpi-1024x768x30",
 		.data = &symtrios_dpi_1024x768x30,
+	}, {
+		.compatible = "symtrios,dpi-1280x720x30",
+		.data = &symtrios_dpi_1280x720x30,
 	}, {
 		.compatible = "team-source-display,tst043015cmhx",
 		.data = &tsd_tst043015cmhx,

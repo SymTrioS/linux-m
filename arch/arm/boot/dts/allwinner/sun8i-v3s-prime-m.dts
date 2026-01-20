@@ -65,6 +65,7 @@
 //        compatible = "symtrios,dpi-800x600x60","simple-panel";
 //        compatible = "symtrios,dpi-1024x600x60","simple-panel";
 //        compatible = "symtrios,dpi-1024x768x30","simple-panel";
+//        compatible = "symtrios,dpi-1280x720x30","simple-panel";
 };
 
 &codec {
