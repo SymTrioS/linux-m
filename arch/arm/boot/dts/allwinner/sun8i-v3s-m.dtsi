@@ -58,8 +58,8 @@
 			compatible = "allwinner,simple-framebuffer",
 				     "simple-framebuffer";
 			allwinner,pipeline = "de0-lcd0";
-			clocks = <&ccu CLK_BUS_TCON0>, <&display_clocks 0>,
-				 <&display_clocks 6>, <&ccu CLK_TCON0>;
+			clocks = <&ccu CLK_BUS_TCON0>, <&ccu CLK_BUS_DE>,
+				 <&ccu CLK_DE>, <&ccu CLK_TCON0>;
 			status = "disabled";
 		};
 	};
@@ -74,12 +74,6 @@
 			reg = <0>;
 			clocks = <&ccu CLK_CPU>;
 		};
-	};
-
-	de: display-engine {
-		compatible = "allwinner,sun8i-v3s-display-engine";
-		allwinner,pipelines = <&mixer0>;
-		status = "disabled";
 	};
 
 	timer {
@@ -193,7 +187,13 @@
 			};
 		};
 
-		dma: dma-controller@01c02000 {
+	        de: display-engine {
+		        compatible = "allwinner,sun8i-v3s-display-engine";
+	           	allwinner,pipelines = <&mixer0>;
+		        status = "disabled";
+	        };
+
+                dma: dma-controller@01c02000 {
 			compatible = "allwinner,sun8i-v3s-dma";
 			reg = <0x01c02000 0x1000>;
 			interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
