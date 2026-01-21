@@ -60,12 +60,14 @@
 };
 
 &panel {
-//        compatible = "symtrios,dpi-480x272x60","simple-panel";
-        compatible = "symtrios,dpi-800x480x60","simple-panel";
-//        compatible = "symtrios,dpi-800x600x60","simple-panel";
-//        compatible = "symtrios,dpi-1024x600x60","simple-panel";
-//        compatible = "symtrios,dpi-1024x768x30","simple-panel";
-//        compatible = "symtrios,dpi-1280x720x30","simple-panel";
+//        compatible = "symtrios,dpi-480x272x60","simple-panel";   // 1 Mb video buffer
+        compatible = "symtrios,dpi-800x480x60","simple-panel";   // 2 Mb video buffer
+//        compatible = "symtrios,dpi-800x600x60","simple-panel";   // 2 Mb video buffer
+//        compatible = "symtrios,dpi-1024x600x60","simple-panel";  // 3 Mb video buffer
+//        compatible = "symtrios,dpi-1024x768x30","simple-panel";  // 3 Mb video buffer
+//        compatible = "symtrios,dpi-1280x720x30","simple-panel";  // 4 Mb video buffer
+//        compatible = "symtrios,dpi-1280x800x30","simple-panel";  // 4 Mb video buffer
+// 
 };
 
 &codec {

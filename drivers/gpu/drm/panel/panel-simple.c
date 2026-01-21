@@ -3798,15 +3798,15 @@ static const struct panel_desc symtrios_dpi_800x600x60 = {
 };
 
 static const struct display_timing symtrios_dpi_1024x600x60_timing = {
-	.pixelclock = { 49000000, 49000000, 49000000 },
+	.pixelclock = { 41000000, 41000000, 41000000 },
 	.hactive = { 1024, 1024, 1024 },
-	.hfront_porch = { 40, 40, 40 },
-	.hback_porch = { 144, 144, 144 },
-	.hsync_len = { 104, 104, 104},
+	.hfront_porch = { 8, 8, 8 },
+	.hback_porch = { 40, 40, 40 },
+	.hsync_len = { 32, 32, 32},
 	.vactive = { 600, 600, 600 },
-	.vfront_porch = { 3, 3, 3 },
-	.vback_porch = { 11, 11, 11 },
-	.vsync_len = { 10, 10, 10 },
+	.vfront_porch = { 4, 4, 4 },
+	.vback_porch = { 6, 6, 6 },
+	.vsync_len = { 8, 8, 8 },
     .flags = DISPLAY_FLAGS_HSYNC_LOW | DISPLAY_FLAGS_VSYNC_LOW |
 		DISPLAY_FLAGS_DE_HIGH | DISPLAY_FLAGS_PIXDATA_POSEDGE |
 		DISPLAY_FLAGS_SYNC_POSEDGE,
@@ -3879,6 +3879,36 @@ static const struct panel_desc symtrios_dpi_1280x720x30 = {
 	.size = {
 		.width = 240,
 		.height = 135,
+	},
+	.bus_format = MEDIA_BUS_FMT_RGB666_1X18,
+	.bus_flags = DRM_BUS_FLAG_DE_HIGH |
+		DRM_BUS_FLAG_PIXDATA_SAMPLE_NEGEDGE |
+		DRM_BUS_FLAG_SYNC_SAMPLE_NEGEDGE,
+	.connector_type = DRM_MODE_CONNECTOR_DPI,
+};
+
+static const struct display_timing symtrios_dpi_1280x800x30_timing = {
+	.pixelclock = { 35000000, 35000000, 35000000 },
+	.hactive = { 1280, 1280, 1280 },
+	.hfront_porch = { 48, 48, 48 },
+	.hback_porch = { 80, 80, 80 },
+	.hsync_len = { 32, 32, 32},
+	.vactive = { 800, 800, 800 },
+	.vfront_porch = { 3, 3, 3 },
+	.vback_porch = { 6, 6, 6 },
+	.vsync_len = { 6, 6, 6 },
+    .flags = DISPLAY_FLAGS_HSYNC_LOW | DISPLAY_FLAGS_VSYNC_LOW |
+		DISPLAY_FLAGS_DE_HIGH | DISPLAY_FLAGS_PIXDATA_POSEDGE |
+		DISPLAY_FLAGS_SYNC_POSEDGE,
+};
+
+static const struct panel_desc symtrios_dpi_1280x800x30 = {
+	.timings = &symtrios_dpi_1280x800x30_timing,
+	.num_timings = 1,
+	.bpc = 6,
+	.size = {
+		.width = 240,
+		.height = 150,
 	},
 	.bus_format = MEDIA_BUS_FMT_RGB666_1X18,
 	.bus_flags = DRM_BUS_FLAG_DE_HIGH |
