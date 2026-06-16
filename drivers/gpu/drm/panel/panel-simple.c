@@ -4684,6 +4684,9 @@ static const struct of_device_id platform_of_match[] = {
 		.compatible = "symtrios,dpi-1280x720x30",
 		.data = &symtrios_dpi_1280x720x30,
 	}, {
+		.compatible = "symtrios,dpi-1280x800x30",
+		.data = &symtrios_dpi_1280x800x30,
+	}, {
 		.compatible = "team-source-display,tst043015cmhx",
 		.data = &tsd_tst043015cmhx,
 	}, {
