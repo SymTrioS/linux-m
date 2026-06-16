@@ -50,6 +50,7 @@
 
 	aliases {
 		serial0 = &uart0;
+		serial2 = &uart2;
 	};
 
 	chosen {
@@ -150,6 +151,12 @@
 
 &uart0 {
 	pinctrl-0 = <&uart0_pb_pins>;
+	pinctrl-names = "default";
+	status = "okay";
+};
+
+&uart2 {
+	pinctrl-0 = <&uart2_pb_pins>;
 	pinctrl-names = "default";
 	status = "okay";
 };

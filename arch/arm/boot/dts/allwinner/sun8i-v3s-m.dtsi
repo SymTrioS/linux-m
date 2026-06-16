@@ -358,6 +358,13 @@
 			uart0_pb_pins: uart0-pb-pins {
 				pins = "PB8", "PB9";
 				function = "uart0";
+				bias-pull-up;
+			};
+
+			uart2_pb_pins: uart2-pb-pins {
+				pins = "PB0", "PB1";
+				function = "uart2";
+				bias-pull-up;
 			};
 
 			lcd_rgb666_pins_a: lcd-rgb666-pe {
